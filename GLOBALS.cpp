@@ -4,19 +4,19 @@ Name:		Christenson, Mark
 File:		GLOBALS.cpp
 Description:	This program manages global variables that may be used by other classes
 		Variables can be changed during run time
-      - Modify Header.txt variable to equal values
-      - Modify CURRENT in Header.txt to equal false
-      - Call FetchGlobalVariables to new values
+      			- Modify Header.txt variable to equal values
+      			- Modify CURRENT in Header.txt to equal false
+			- Call FetchGlobalVariables to new values
 		New variables can be defined:
-      - Changing CURRENT to equal false
+			- Changing CURRENT to equal false
 			- Adding a new variable name to Header.txt
 			- New variable can't be the first or last variable in Header.txt
 			- Set new variable to equal to some value
-      - Call FetchGlobalVariables and rewrite
+			- Call FetchGlobalVariables and rewrite
 			- Automatic types include double, string, or bool
 		Recompile the code
 			- To use new variables
-      - After Calling rewrite
+			- After Calling rewrite
 		Steps to recompile globals
 			- Change the first line UNCOMPILED coment to COMPILED
 			- Compile program normally
