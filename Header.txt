@@ -1,0 +1,8 @@
+CURRENT = true
+TESTTWO = true
+DEBUG = false
+TEST = true
+BALANCE = 313.54
+LENGTH = 8
+FILENAME = MasterData.txt
+COMPILED = true
