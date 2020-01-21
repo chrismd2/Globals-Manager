@@ -18,6 +18,7 @@ void showKnownGlobals(){
 int main(int argc, char const *argv[]) {
   showKnownGlobals();
   FetchGlobalVariables();
+  /*
   if(DEBUG){
     cout << "\nIn Main\n";
     if(argc > 1){
@@ -28,6 +29,7 @@ int main(int argc, char const *argv[]) {
     }
     getUndefinedVariables();
   }
+  */
   rewrite();
   showKnownGlobals();
 
