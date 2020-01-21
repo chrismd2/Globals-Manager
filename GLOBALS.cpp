@@ -1,4 +1,26 @@
 /*>COMPILED<*/
+/*
+Name:		Christenson, Mark
+File:		GLOBALS.cpp
+Description:	This program manages global variables that may be used by other classes
+		Variables can be changed during run time
+      - Modify Header.txt variable to equal values
+      - Modify CURRENT in Header.txt to equal false
+      - Call FetchGlobalVariables to new values
+		New variables can be defined:
+      - Changing CURRENT to equal false
+			- Adding a new variable name to Header.txt
+			- New variable can't be the first or last variable in Header.txt
+			- Set new variable to equal to some value
+      - Call FetchGlobalVariables and rewrite
+			- Automatic types include double, string, or bool
+		Recompile the code
+			- To use new variables
+      - After Calling rewrite
+		Steps to recompile globals
+			- Change the first line UNCOMPILED coment to COMPILED
+			- Compile program normally
+*/
 #include <iostream>
 #include <fstream>
 #include <time.h>
@@ -9,14 +31,17 @@ using namespace std;
 vector< vector<string> > undefinedVariables;
 vector<string> v;
 /*>VARIABLES<*/
-extern bool TESTTWO = true;
-extern bool TEST = true;
-extern double BALANCE = 313.54;
+extern bool TESTTWO = false;
+extern bool TEST = false;
+extern double BALANCE = 1.54;
 extern double LENGTH = 8;
-extern string FILENAME = "MasterData.txt";
+extern string FILENAME = "piles.odt";
 extern bool COMPILED = true;
 extern bool DEBUG = false;						/**< Set true for debugging output	  */
 /*>FUNCTIONS<*/
+/*
+  rewriteHeader rewrites the variables in Header.txt to be in uppercase
+*/
 void rewriteHeader(){
   //Copy the original header into a temporary file
   if(true){
@@ -63,8 +88,14 @@ void rewriteHeader(){
   }
   header.close();
   TFile.close();
-}
+}//end of rewriteHeader
 
+/*
+  rewriteVars updates the variables in GLOBALS.cpp
+    - Changes variable definitions to match those in Header.txt
+    - Adds new variable declaration for those who are currently undefined
+    - Adds functions for real time updates for undefined variables
+*/
 void rewriteVars(){
   ofstream TFile;
   ofstream globalsFile;
@@ -306,6 +337,10 @@ void rewriteVars(){
   currentFile.close();
   globalsFile.close();
 }
+
+/*
+  rewrite calls both rewriteVars and rewriteHeader
+*/
 extern void rewrite(){
   ifstream lineCheck;
   string cppstr, hstr;
@@ -331,7 +366,7 @@ extern void rewrite(){
   }
 
   cout << "NOTICE: Recompile to have global variables updated";
-}
+}//end of rewrite
 
 bool boolCheck(string boolValue){
   return (boolValue == "True" || boolValue == "TRUE" || boolValue == "true" || boolValue == "T" || boolValue == "t");
