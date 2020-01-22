@@ -418,7 +418,10 @@ extern void FetchGlobalVariables(){
     }
     if(DEBUG){cout << "Word: " << word << endl;}
     if(correctHeader && !boolCheck(word)){
-      if(DEBUG){cout << "Header has been changed and global variables need to be updated\n";}
+      if(DEBUG){
+        cout  << "Header has been changed and global variables need to be updated"
+              << "\n\tUse the rewrite function and recompile to update\n";
+      }
       unsigned int newWordCount = 0;
       while (header.peek() != EOF) {
         word = "";
