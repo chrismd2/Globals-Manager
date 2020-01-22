@@ -8,7 +8,7 @@ Description:	This program is to facilitate testing of other programs
       - Named devTest
       - Second to last function
       - Called in developer mode in CLI with x
-      - Can safely be edited to change its behavior for testing 
+      - Can safely be edited to change its behavior for testing
 */
 
 #include <iostream>
@@ -44,17 +44,18 @@ void update(){
 
 //Test function to be called for option x for developer mode
 void devTest(){
-  if(DEBUG){cout << "Developer's test function called\n";}
+  cout << TEXT << endl;
 }
 
 /*
-Developer Options - activated by leading option with d
+Developer Options - activated by leading option with d (ie: dx, dd, dxux)
   - x: Calls devTest, a test function for developer to call with developer mode options
   - d: displays arguments data by calling showArgs
   - u: runs update
 
 User Options
-  - cases to be defined in switch statement
+  - d: activate developer mode
+  - u: updates exsisting global variables during runtime to reflect those in the header
 */
 int main(int argc, char const *argv[]) {
   for(int i = 1; i < argc; i++){
@@ -68,7 +69,7 @@ int main(int argc, char const *argv[]) {
           switch (argv[i][j]) {
             case 'x':
               if(DEBUG){cout << "x case called\n";}
-              test();
+              devTest();
               break;
             case 'd':
               showArgs(argc, argv);
@@ -84,6 +85,9 @@ int main(int argc, char const *argv[]) {
         if(strlen(argv[i]) == 1){
           cout << "ERROR: must choose an option\n";
         }
+        break;
+      case 'u':
+        FetchGlobalVariables();
         break;
       default:
         cout << "ERROR: there is no defined case for argv #" << i << "\n";
