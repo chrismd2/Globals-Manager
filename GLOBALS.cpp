@@ -31,12 +31,7 @@ using namespace std;
 vector< vector<string> > undefinedVariables;
 vector<string> v;
 /*>VARIABLES<*/
-extern bool TESTTWO = false;
-extern bool TEST = false;
-extern double BALANCE = 1.54;
-extern double LENGTH = 8;
-extern string FILENAME = "piles.odt";
-extern bool COMPILED = true;
+extern string TEXT = "textData";
 extern bool DEBUG = false;						/**< Set true for debugging output	  */
 /*>FUNCTIONS<*/
 /*
@@ -436,7 +431,7 @@ extern void FetchGlobalVariables(){
           bool validOption = false;
 /*>VALID OPTIONS<*/
 
-		if(word == "TESTTWO"){
+		if(word == "TEXT"){
 			if(DEBUG){cout << word << " is a valid option";}
 			validOption = true;
 			word = "";
@@ -453,151 +448,10 @@ extern void FetchGlobalVariables(){
 				index++;
 			}
 
-		//New functionality for TESTTWO starts here
-		if(word == "false"){TESTTWO = false;}
-			if(word == "true"){TESTTWO = true;}}
+		//New functionality for TEXT starts here
+		TEXT = word;}
 
-		if(word == "TEST"){
-			if(DEBUG){cout << word << " is a valid option";}
-			validOption = true;
-			word = "";
-
-			while(correctHeader && index < str.length()
-				&& (str[index] < int('A') || str[index] > int('z'))
-				&& (str[index] < int('0') || str[index] > int('9'))
-				&& str[index] != '-'){
-				index++;
-			}
-
-			while(index < str.length()){
-				word+=str[index];
-				index++;
-			}
-
-		//New functionality for TEST starts here
-		if(word == "false"){TEST = false;}
-			if(word == "true"){TEST = true;}}
-
-		if(word == "BALANCE"){
-			if(DEBUG){cout << word << " is a valid option";}
-			validOption = true;
-			word = "";
-
-			while(correctHeader && index < str.length()
-				&& (str[index] < int('A') || str[index] > int('z'))
-				&& (str[index] < int('0') || str[index] > int('9'))
-				&& str[index] != '-'){
-				index++;
-			}
-
-			while(index < str.length()){
-				word+=str[index];
-				index++;
-			}
-
-		//New functionality for BALANCE starts here
-		double value = 0;
-		int decimal = 1;
-		bool fractional = false;
-		bool negative = false;
-		for (size_t i = 0; i < word.length(); i++) {
-			if(word[i] != '.' && word[i] != '-'){
-			value *= 10;
-			value += int(word[i]) - int('0');
-			}
-		if(fractional){
-			decimal*=10;
-		}
-		if(word[i] == '.'){
-			fractional = true;
-		}
-		if(word[i] == '-'){
-			negative = true;
-		}
-		}
-		value = value/decimal;
-		if(negative){value = -1 * value;}BALANCE = value;}
-
-		if(word == "LENGTH"){
-			if(DEBUG){cout << word << " is a valid option";}
-			validOption = true;
-			word = "";
-
-			while(correctHeader && index < str.length()
-				&& (str[index] < int('A') || str[index] > int('z'))
-				&& (str[index] < int('0') || str[index] > int('9'))
-				&& str[index] != '-'){
-				index++;
-			}
-
-			while(index < str.length()){
-				word+=str[index];
-				index++;
-			}
-
-		//New functionality for LENGTH starts here
-		double value = 0;
-		int decimal = 1;
-		bool fractional = false;
-		bool negative = false;
-		for (size_t i = 0; i < word.length(); i++) {
-			if(word[i] != '.' && word[i] != '-'){
-			value *= 10;
-			value += int(word[i]) - int('0');
-			}
-		if(fractional){
-			decimal*=10;
-		}
-		if(word[i] == '.'){
-			fractional = true;
-		}
-		if(word[i] == '-'){
-			negative = true;
-		}
-		}
-		value = value/decimal;
-		if(negative){value = -1 * value;}LENGTH = value;}
-
-		if(word == "FILENAME"){
-			if(DEBUG){cout << word << " is a valid option";}
-			validOption = true;
-			word = "";
-
-			while(correctHeader && index < str.length()
-				&& (str[index] < int('A') || str[index] > int('z'))
-				&& (str[index] < int('0') || str[index] > int('9'))
-				&& str[index] != '-'){
-				index++;
-			}
-
-			while(index < str.length()){
-				word+=str[index];
-				index++;
-			}
-
-		//New functionality for FILENAME starts here
-		FILENAME = word;}
-
-		if(word == "COMPILED"){
-			if(DEBUG){cout << word << " is a valid option";}
-			validOption = true;
-			word = "";
-
-			while(correctHeader && index < str.length()
-				&& (str[index] < int('A') || str[index] > int('z'))
-				&& (str[index] < int('0') || str[index] > int('9'))
-				&& str[index] != '-'){
-				index++;
-			}
-
-			while(index < str.length()){
-				word+=str[index];
-				index++;
-			}
-
-		//New functionality for COMPILED starts here
-		if(word == "false"){COMPILED = false;}
-			if(word == "true"){COMPILED = true;}}
+		
           if(word == "DEBUG"){
             if(DEBUG){cout << word << " is a valid option\n";}
             validOption = true;
