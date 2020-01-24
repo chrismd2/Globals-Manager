@@ -42,3 +42,8 @@ Behavior:
       
     
 Bugs:
+
+Proposed New Features:
+    Replace "CURRENT = bool" line with a hashing function and compare the hashes
+    	+ User won't have to change bool value
+	- The program won't be able to terminate reading early if Header.txt is current
