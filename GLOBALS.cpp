@@ -360,7 +360,7 @@ extern void rewrite(){
     }
   }
 
-  cout << "NOTICE: Recompile to have global variables updated";
+  cout << "NOTICE: Recompile to have global variables updated\n";
 }//end of rewrite
 
 bool boolCheck(string boolValue){
@@ -387,7 +387,7 @@ extern void FetchGlobalVariables(){
   ifstream header;
   bool correctHeader = true;
   header.open("Header.txt");
-  if(header != NULL){
+  if(header){
     if(DEBUG){cout << "Header.txt opened\n";}
     string str, word;
     int index = 0;
@@ -451,7 +451,7 @@ extern void FetchGlobalVariables(){
 		//New functionality for TEXT starts here
 		TEXT = word;}
 
-		
+
           if(word == "DEBUG"){
             if(DEBUG){cout << word << " is a valid option\n";}
             validOption = true;
@@ -503,7 +503,7 @@ extern void FetchGlobalVariables(){
   }
   header.close();
   header.open("Header.txt");
-  if(!correctHeader || header == NULL){
+  if(!correctHeader || !header){
     if(DEBUG){cout << "Entered repair block\n";}
     if(DEBUG && NULL){ cout << "Header.txt doesn't exist, new file made\n";}
     if(DEBUG && !correctHeader){ cout << "Replacing Header.txt\n";}
