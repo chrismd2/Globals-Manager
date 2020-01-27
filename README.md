@@ -42,6 +42,9 @@ Behavior:
       
     
 Bugs:
+    - User currently can't define dependencies
+    - Dependencies must be defined in additional functionality
+    - Dependencies haven't been tested
 
 Proposed New Features:
     Replace "CURRENT = bool" line with a hashing function and compare the hashes
