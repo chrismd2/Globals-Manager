@@ -1,4 +1,4 @@
-# Globals-Manager
+# Globals-Manager: modified
 
 Name:		Christenson, Mark
 File:		README.md
