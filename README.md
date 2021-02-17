@@ -1,4 +1,4 @@
-# Globals-Manager: modified
+# Globals-Manager
 
 Name:		Christenson, Mark
 File:		README.md
@@ -8,7 +8,7 @@ Rules:
     - First line of Header.txt must be CURRENT
     - Newly introduced variables can not be last
 
-Description:	GLOBALS.cpp manages global variables that may be used by other applications and 
+Description:	GLOBALS.cpp manages global variables that may be used by other applications and
 main.cpp tests and provides an interface for globals
 		Variables can be changed during run time
       - Modify Header.txt variable to equal values
@@ -34,13 +34,13 @@ main.cpp tests and provides an interface for globals
       - Second to last function
       - Called in developer mode in CLI with x
       - Can safely be edited to change its behavior for testing
-      
+
 Behavior:
     Automatic Definitions are restricted to double, float, and bool
       - Can redefine variable types if needed
       - Variables may be reordered in Header.txt after compiling
-      
-    
+
+
 Bugs:
     - User currently can't define dependencies
     - Dependencies must be defined in additional functionality
